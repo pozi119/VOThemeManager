@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VOThemeManager/VOThemeManager+Preset.m"
+            timestampString = "470335571.37332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-presetForUINavigationBarAppearance"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[VOThemeManager(Preset) presetForUINavigationBarAppearance]_block_invoke212"
+                  moduleName = "VOThemeManagerDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Valo/Documents/Work/Valo/Objective-C/VOThemeManagerDemo/VOThemeManager/VOThemeManager+Preset.m"
+                  timestampString = "470335631.982311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[VOThemeManager(Preset) presetForUINavigationBarAppearance]_block_invoke_2213"
+                  moduleName = "VOThemeManagerDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Valo/Documents/Work/Valo/Objective-C/VOThemeManagerDemo/VOThemeManager/VOThemeManager+Preset.m"
+                  timestampString = "470335631.982646"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "97">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

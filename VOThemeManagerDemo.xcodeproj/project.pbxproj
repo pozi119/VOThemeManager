@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		3E17273B1BFF5B78005708A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E17273A1BFF5B78005708A6 /* main.m */; };
 		3E17273E1BFF5B78005708A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E17273D1BFF5B78005708A6 /* AppDelegate.m */; };
-		3E1727411BFF5B78005708A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1727401BFF5B78005708A6 /* ViewController.m */; };
 		3E1727441BFF5B78005708A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1727421BFF5B78005708A6 /* Main.storyboard */; };
 		3E1727461BFF5B78005708A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1727451BFF5B78005708A6 /* Assets.xcassets */; };
 		3E1727491BFF5B78005708A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1727471BFF5B78005708A6 /* LaunchScreen.storyboard */; };
+		3E7003E71C11C42200D9DEF6 /* VOThemeSample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E7003E61C11C42200D9DEF6 /* VOThemeSample.plist */; };
+		3EFD32CA1C073D02005E40EF /* NSObject+VOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32BD1C073D02005E40EF /* NSObject+VOTheme.m */; };
+		3EFD32CB1C073D02005E40EF /* NSObject+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32BF1C073D02005E40EF /* NSObject+WebCacheOperation.m */; };
+		3EFD32CC1C073D02005E40EF /* UIColor+VOHEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32C11C073D02005E40EF /* UIColor+VOHEX.m */; };
+		3EFD32CD1C073D02005E40EF /* VOThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32C31C073D02005E40EF /* VOThemeManager.m */; };
+		3EFD32D01C073D02005E40EF /* VOThemeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32C81C073D02005E40EF /* VOThemeUtils.m */; };
+		3EFD32D41C075FF0005E40EF /* VOThemeManager+Preset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32D31C075FF0005E40EF /* VOThemeManager+Preset.m */; };
+		3EFD32D71C077F30005E40EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32D61C077F30005E40EF /* ViewController.m */; };
+		3EFD32DA1C081A92005E40EF /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32D91C081A92005E40EF /* TabBarController.m */; };
+		823601DA27CAF81F70EA7808 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4971FF6B1CD95E22A9430721 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +29,29 @@
 		3E17273A1BFF5B78005708A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E17273C1BFF5B78005708A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E17273D1BFF5B78005708A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3E17273F1BFF5B78005708A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3E1727401BFF5B78005708A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3E1727431BFF5B78005708A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E1727451BFF5B78005708A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E1727481BFF5B78005708A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E17274A1BFF5B78005708A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E7003E61C11C42200D9DEF6 /* VOThemeSample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VOThemeSample.plist; sourceTree = "<group>"; };
+		3EFD32BC1C073D02005E40EF /* NSObject+VOTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VOTheme.h"; sourceTree = "<group>"; };
+		3EFD32BD1C073D02005E40EF /* NSObject+VOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VOTheme.m"; sourceTree = "<group>"; };
+		3EFD32BE1C073D02005E40EF /* NSObject+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WebCacheOperation.h"; sourceTree = "<group>"; };
+		3EFD32BF1C073D02005E40EF /* NSObject+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WebCacheOperation.m"; sourceTree = "<group>"; };
+		3EFD32C01C073D02005E40EF /* UIColor+VOHEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+VOHEX.h"; sourceTree = "<group>"; };
+		3EFD32C11C073D02005E40EF /* UIColor+VOHEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+VOHEX.m"; sourceTree = "<group>"; };
+		3EFD32C21C073D02005E40EF /* VOThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOThemeManager.h; sourceTree = "<group>"; };
+		3EFD32C31C073D02005E40EF /* VOThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOThemeManager.m; sourceTree = "<group>"; };
+		3EFD32C71C073D02005E40EF /* VOThemeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOThemeUtils.h; sourceTree = "<group>"; };
+		3EFD32C81C073D02005E40EF /* VOThemeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOThemeUtils.m; sourceTree = "<group>"; };
+		3EFD32D31C075FF0005E40EF /* VOThemeManager+Preset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VOThemeManager+Preset.m"; sourceTree = "<group>"; };
+		3EFD32D51C077F30005E40EF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3EFD32D61C077F30005E40EF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3EFD32D81C081A92005E40EF /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		3EFD32D91C081A92005E40EF /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		4971FF6B1CD95E22A9430721 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4EE67C3A45C38649C95EF9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DDB69A364FF13C219249964B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823601DA27CAF81F70EA7808 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +69,11 @@
 		3E17272D1BFF5B78005708A6 = {
 			isa = PBXGroup;
 			children = (
+				3EFD32BB1C073D02005E40EF /* VOThemeManager */,
 				3E1727381BFF5B78005708A6 /* VOThemeManagerDemo */,
 				3E1727371BFF5B78005708A6 /* Products */,
+				438730AFF7FAC941C30B3443 /* Pods */,
+				D18803F92104FCC535E154A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +88,13 @@
 		3E1727381BFF5B78005708A6 /* VOThemeManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3E7003E61C11C42200D9DEF6 /* VOThemeSample.plist */,
 				3E17273C1BFF5B78005708A6 /* AppDelegate.h */,
 				3E17273D1BFF5B78005708A6 /* AppDelegate.m */,
-				3E17273F1BFF5B78005708A6 /* ViewController.h */,
-				3E1727401BFF5B78005708A6 /* ViewController.m */,
+				3EFD32D51C077F30005E40EF /* ViewController.h */,
+				3EFD32D61C077F30005E40EF /* ViewController.m */,
+				3EFD32D81C081A92005E40EF /* TabBarController.h */,
+				3EFD32D91C081A92005E40EF /* TabBarController.m */,
 				3E1727421BFF5B78005708A6 /* Main.storyboard */,
 				3E1727451BFF5B78005708A6 /* Assets.xcassets */,
 				3E1727471BFF5B78005708A6 /* LaunchScreen.storyboard */,
@@ -79,6 +112,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3EFD32BB1C073D02005E40EF /* VOThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				3EFD32BC1C073D02005E40EF /* NSObject+VOTheme.h */,
+				3EFD32BD1C073D02005E40EF /* NSObject+VOTheme.m */,
+				3EFD32BE1C073D02005E40EF /* NSObject+WebCacheOperation.h */,
+				3EFD32BF1C073D02005E40EF /* NSObject+WebCacheOperation.m */,
+				3EFD32C01C073D02005E40EF /* UIColor+VOHEX.h */,
+				3EFD32C11C073D02005E40EF /* UIColor+VOHEX.m */,
+				3EFD32C21C073D02005E40EF /* VOThemeManager.h */,
+				3EFD32C31C073D02005E40EF /* VOThemeManager.m */,
+				3EFD32D31C075FF0005E40EF /* VOThemeManager+Preset.m */,
+				3EFD32C71C073D02005E40EF /* VOThemeUtils.h */,
+				3EFD32C81C073D02005E40EF /* VOThemeUtils.m */,
+			);
+			path = VOThemeManager;
+			sourceTree = "<group>";
+		};
+		438730AFF7FAC941C30B3443 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB4EE67C3A45C38649C95EF9 /* Pods.debug.xcconfig */,
+				DDB69A364FF13C219249964B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D18803F92104FCC535E154A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4971FF6B1CD95E22A9430721 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E17274D1BFF5B78005708A6 /* Build configuration list for PBXNativeTarget "VOThemeManagerDemo" */;
 			buildPhases = (
+				F56CDD7ECC4406730AF83DA7 /* Check Pods Manifest.lock */,
 				3E1727321BFF5B78005708A6 /* Sources */,
 				3E1727331BFF5B78005708A6 /* Frameworks */,
 				3E1727341BFF5B78005708A6 /* Resources */,
+				64B64E432DE441B0A70C675E /* Embed Pods Frameworks */,
+				F87ABFB36FBFE9F065A0E8A5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,19 +210,75 @@
 				3E1727491BFF5B78005708A6 /* LaunchScreen.storyboard in Resources */,
 				3E1727461BFF5B78005708A6 /* Assets.xcassets in Resources */,
 				3E1727441BFF5B78005708A6 /* Main.storyboard in Resources */,
+				3E7003E71C11C42200D9DEF6 /* VOThemeSample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64B64E432DE441B0A70C675E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F56CDD7ECC4406730AF83DA7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F87ABFB36FBFE9F065A0E8A5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E1727321BFF5B78005708A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1727411BFF5B78005708A6 /* ViewController.m in Sources */,
+				3EFD32D71C077F30005E40EF /* ViewController.m in Sources */,
+				3EFD32CB1C073D02005E40EF /* NSObject+WebCacheOperation.m in Sources */,
+				3EFD32CC1C073D02005E40EF /* UIColor+VOHEX.m in Sources */,
+				3EFD32CD1C073D02005E40EF /* VOThemeManager.m in Sources */,
+				3EFD32CA1C073D02005E40EF /* NSObject+VOTheme.m in Sources */,
 				3E17273E1BFF5B78005708A6 /* AppDelegate.m in Sources */,
+				3EFD32D01C073D02005E40EF /* VOThemeUtils.m in Sources */,
+				3EFD32DA1C081A92005E40EF /* TabBarController.m in Sources */,
 				3E17273B1BFF5B78005708A6 /* main.m in Sources */,
+				3EFD32D41C075FF0005E40EF /* VOThemeManager+Preset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +386,7 @@
 		};
 		3E17274E1BFF5B78005708A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB4EE67C3A45C38649C95EF9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOThemeManagerDemo/Info.plist;
@@ -270,6 +398,7 @@
 		};
 		3E17274F1BFF5B78005708A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDB69A364FF13C219249964B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOThemeManagerDemo/Info.plist;
@@ -298,6 +427,7 @@
 				3E17274F1BFF5B78005708A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

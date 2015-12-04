@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TabBarController.h
 //  VOThemeManagerDemo
 //
 //  Created by Valo on 15/11/27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TabBarController : UITabBarController
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VOThemeManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[VOThemeManager sharedManager] themeApplierPresets];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"VOThemeSample" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    [[VOThemeManager sharedManager] setTheme:dic withName:@"test" themeConverter:^NSDictionary *(NSDictionary *sourceTheme) {
+        return sourceTheme;
+    }];
+    [[VOThemeManager sharedManager] applyThemeWithName:@"test"];
+    [[VOThemeManager sharedManager] setThemeObject:[UINavigationBar appearance] primaryKey:@"nav" tag:0 themeKey:VOThemeBackgroundImageKey];
+
     return YES;
 }
 
