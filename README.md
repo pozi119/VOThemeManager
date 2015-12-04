@@ -3,7 +3,7 @@
 [![License Apache](http://img.shields.io/cocoapods/l/VOThemeManager.svg?style=flat)](https://raw.githubusercontent.com/pozi119/VOThemeManager/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/VOThemeManager.svg?style=flat)](http://cocoapods.org/?q=VOThemeManager)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/p/VOThemeManager.svg?style=flat)](http://cocoapods.org/?q=VOThemeManager)&nbsp;
-[![Support](https://img.shields.io/badge/support-iOS%206%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+[![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 [![Build Status](https://travis-ci.org/pozi119/VOThemeManager.svg?branch=master)](https://travis-ci.org/pozi119/VOThemeManager)
 
 主题管理器
