@@ -45,12 +45,28 @@ pod 'VOThemeManager'
 # 使用
 1.唤醒APP时,将主题数据转换为本管理器支持的格式. 例如:
 ```objc
-[[VOThemeManager sharedManager] themeApplierPresets];
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"VOThemeSample" ofType:@"plist"];
-		NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-	[[VOThemeManager sharedManager] setTheme:dic withName:@"test" themeConverter:^NSDictionary *(NSDictionary *sourceTheme) {
-  		return sourceTheme;
-	}];
+[[VOThemeManager sharedManager] setTheme:array withName:key themeConverter:^NSDictionary *(NSArray *themeArray) {
+    __block NSMutableDictionary *itemDic = @{}.mutableCopy;
+    [themeArray enumerateObjectsUsingBlock:^(WXSkinItem *skinItem, NSUInteger idx, BOOL *stop) {
+        if (skinItem.skinCode.length > 0) {
+            if (skinItem.skinFontStyle.length > 0) {
+                NSString *realKey = nil;
+                BOOL flag = [VOThemeUtils convertPrimaryKey:skinItem.skinCode tag:0 themeKey:VOThemeColorKey toRealKey:&realKey];
+                if (flag) {
+                    itemDic[realKey] = skinItem.skinFontStyle;
+                }
+            }
+            if (skinItem.skinPic.length > 0) {
+                NSString *realKey = nil;
+                BOOL flag = [VOThemeUtils convertPrimaryKey:skinItem.skinCode tag:0 themeKey:VOThemeImageKey toRealKey:&realKey];
+                if (flag) {
+                    itemDic[realKey] = skinItem.skinPic;
+                }
+            }
+        }
+    }];
+    return itemDic;
+}];
 ```
 通常在` - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`中调用
 
