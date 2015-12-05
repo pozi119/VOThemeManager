@@ -18,7 +18,7 @@ pod 'VOThemeManager'
 
 # 数据说明
    themes 存放所有主题数据,key表示主题名,value为对应主题数据.  
-   主题数据也是NSDictionary类型, key的格式为 主键|标签|主题键,value为相应的值  
+   主题数据也是NSDictionary类型, key的格式为 **主键|标签|主题键**,value为相应的值  
    示例如下:
 ```ruby
 {
@@ -33,13 +33,14 @@ pod 'VOThemeManager'
 
    themeAppliers 应用主题数据的方法, themeGetters 获取对象的某个主题属性, themeObjs 当前要应用主题的对象  
    它们都是 NSMutableDictionary 对象.  
-   themeAppliers和themeGetters的key都是 `类名(单列对象内存地址)|标签|主题键`, value为block对象.  
-   themeObjs的key是 `主键|标签|主题键`, value为某个对象,通常为某种视图对象
+   themeAppliers和themeGetters的key都是 **类名(单列对象内存地址)|标签|主题键**, value为block对象.  
+   themeObjs的key是 **主键|标签|主题键**, value为某个对象,通常为某种视图对象
 
-   注: 主键-->自定义的键,用于表示某个主题对象.  
-   标签-->比较灵活,可以是UIControlState,比如UIButton的各种状态. 也可以是某个View的tag,用于区分相同类型的不同对象.也可以是一些自定义的状态  
-   主题键-->预定义了四种,`color`,`backgroundColor`,`image`,`backgroundImage`(对应`VOThemeColorKey`,`VOThemeBackgroundColorKey`,`VOThemeImageKey`,`VOThemeBackgroundImageKey`).当然也可以自定义主题键.  
-   `主键(类名 或 单列对象内存地址))|标签|主题键` 组合起来构成 存储各种数据的 真实键
+   注:  
+   主  键 --> 自定义的键,用于表示某个主题对象.  
+   标  签 --> 比较灵活,可以是UIControlState,比如UIButton的各种状态. 也可以是某个View的tag,用于区分相同类型的不同对象.也可以是一些自定义的状态  
+   主题键 --> 预定义了四种,`color`, `backgroundColor`, `image`, `backgroundImage` (对应`VOThemeColorKey`, `VOThemeBackgroundColorKey`, `VOThemeImageKey`, `VOThemeBackgroundImageKey`).当然也可以自定义主题键.  
+   真实键 --> 由 **主键(类名 或 单列对象内存地址))|标签|主题键** 组合起来构成 
 
 # 使用
 1.唤醒APP时,将主题数据转换为本管理器支持的格式. 例如:
