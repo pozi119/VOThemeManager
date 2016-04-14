@@ -18,20 +18,21 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [[VOThemeManager sharedManager] setThemeObject:self.testButton primaryKey:@"btn1" tag:UIControlStateNormal themeKey:VOThemeColorKey];
-    [[VOThemeManager sharedManager] setThemeObject:self.testButton primaryKey:@"btn1" tag:UIControlStateNormal themeKey:VOThemeBackgroundColorKey];
-    [[VOThemeManager sharedManager] setThemeObject:self.testButton primaryKey:@"btn1" tag:UIControlStateHighlighted themeKey:VOThemeColorKey];
-    [[VOThemeManager sharedManager] setThemeObject:self.testButton primaryKey:@"btn1" tag:UIControlStateSelected themeKey:VOThemeColorKey];
-    [[VOThemeManager sharedManager] setThemeObject:self.testButton primaryKey:@"btn1" tag:UIControlStateDisabled themeKey:VOThemeColorKey];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[VOThemeManager sharedManager] applyThemeWithName:nil];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[VOThemeManager sharedManager] applyThemeWithName:@"test"];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[VOThemeManager sharedManager] applyThemeWithName:@"aaa"];
-    });
+    /* 设置要应用的对象 */
+    NSArray *keys = @[@"btn1_titleColor",@"btn1_hlColor",@"btn1_selectedColor",@"btn1_disableColor"];
+    NSArray *state = @[@(UIControlStateNormal), @(UIControlStateHighlighted), @(UIControlStateSelected),@(UIControlStateDisabled)];
+    for (NSInteger i = 0; i < keys.count; i ++) {
+        [VOThemeManager setThemeObject:self.testButton forKey:keys[i] defaultBlock:^id(UIButton *button) {
+            return [button titleColorForState:[state[i] integerValue]];
+        } applier:^(UIButton *button, UIColor *color) {
+            [button setTitleColor:color forState:[state[i] integerValue]];
+        }];
+    }
+    [VOThemeManager setThemeObject:self.testButton forKey:@"btn1_bgColor" defaultBlock:^id(UIButton *button) {
+        return button.backgroundColor;
+    } applier:^(UIButton *button, UIColor *color) {
+        button.backgroundColor = color;
+    }];
 }
 
 @end

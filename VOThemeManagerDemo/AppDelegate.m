@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "VOThemeManager.h"
+#import "VOThemeUtils.h"
+#import "AFImageDownloader.h"
+#import "UIColor+VOHEX.h"
 
 @interface AppDelegate ()
 
@@ -18,15 +21,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[VOThemeManager sharedManager] themeApplierPresets];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"VOThemeSample" ofType:@"plist"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    [[VOThemeManager sharedManager] setTheme:dic withName:@"test" themeConverter:^NSDictionary *(NSDictionary *sourceTheme) {
-        return sourceTheme;
+    dispatch_queue_t dispatchQueue = dispatch_queue_create("ted.queue.next", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    NSMutableDictionary *processedDic = @{}.mutableCopy;
+    [dic enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop) {
+        VOThemeImagePathType type = [VOThemeUtils imagePathType:value];
+        NSRange range = [value rangeOfString:@"#" options:NSLiteralSearch];
+        if (range.length == 1) {
+            processedDic[key] = [UIColor colorWithHexString:value];
+        }
+        else if(type == VOThemeImagePathAbsoluteURL){
+            dispatch_async(dispatchQueue, ^{
+                dispatch_group_enter(dispatchGroup);
+                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:value]];
+                [[AFImageDownloader defaultInstance] downloadImageForURLRequest:request success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull responseObject) {
+                    processedDic[key] = responseObject;
+                    dispatch_group_leave(dispatchGroup);
+                } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                    dispatch_group_leave(dispatchGroup);
+                }];
+            });
+        }
+        else if(type == VOThemeImagePathMainBundle){
+            processedDic[key] = [UIImage imageNamed:value];
+        }
     }];
-    [[VOThemeManager sharedManager] applyThemeWithName:@"test"];
-    [[VOThemeManager sharedManager] setThemeObject:[UINavigationBar appearance] primaryKey:@"nav" tag:0 themeKey:VOThemeBackgroundImageKey];
-
+    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
+        [VOThemeManager setData:processedDic forTheme:@"test"];
+        VOThemeManager.currentTheme = @"test";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            VOThemeManager.currentTheme = nil;
+        });
+    });
+    
     return YES;
 }
 

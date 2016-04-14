@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SDWebImage.xcscheme</key>
+		<key>YYCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>122BC0DDFA2D0FAD098E79F9FF495B56</key>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAEA868BA328BE96EDD68B17F7660DB0</key>
+		<key>B1CB4487985125B7ADABADC42DA11D02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA90F8280D3FC5385765EEFBA9A649EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

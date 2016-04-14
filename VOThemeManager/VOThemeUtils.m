@@ -1,14 +1,13 @@
 //
 //  VOThemeUtils.m
-//  netCafe
+//  Valo
 //
 //  Created by Valo on 15/11/24.
-//  Copyright © 2015年 Sicent. All rights reserved.
+//  Copyright © 2015年 Valo. All rights reserved.
 //
 
 #import "VOThemeUtils.h"
 #import "UIColor+VOHEX.h"
-#import "NSObject+WebCacheOperation.h"
 
 @implementation VOThemeUtils
 + (UIColor *)colorFormOriginColor:(id)originColor{
@@ -145,84 +144,6 @@
         }
     }
     return matches;
-}
-
-
-+ (BOOL)convertRealKey:(NSString *)realKey
-          toPrimaryKey:(NSString **)primaryKey
-                   tag:(NSInteger *)tag
-              themeKey:(NSString **)themeKey{
-    if (!(realKey && realKey.length > 0 && primaryKey && tag && themeKey)) {
-        return NO;
-    }
-    NSArray *array = [realKey componentsSeparatedByString:@"|"];
-    if (array.count != 3) {
-        return NO;
-    }
-    *primaryKey = array[0];
-    *tag = [array[1] integerValue];
-    *themeKey = array[2];
-    return YES;
-}
-
-+ (BOOL)convertPrimaryKey:(id)primaryKey
-                      tag:(NSInteger)tag
-                 themeKey:(NSString *)themeKey
-                toRealKey:(NSString **)realKey{
-    if (!(primaryKey && themeKey && realKey)) {
-        return NO;
-    }
-    NSString *newPrimaryKey = nil;
-    if ([primaryKey isKindOfClass:[NSString class]]) {
-        newPrimaryKey = primaryKey;
-        if (newPrimaryKey.length == 0) {
-            return NO;
-        }
-    }
-    else{
-        newPrimaryKey = [NSString stringWithFormat:@"%p", primaryKey];
-    }
-    *realKey = [NSString stringWithFormat:@"%@|%@|%@",newPrimaryKey,@(tag),themeKey];
-    return YES;
-}
-
-+ (void)configureImageForObject:(NSObject *)aObj
-                          image:(id)aImage
-                  baseImagePath:(NSString *)baseImagePath
-                       themeKey:(NSString *)themeKey
-                            tag:(NSInteger)tag
-                   imageHandler:(VOImageHandler)imageHandler{
-    NSString *loadKey = [NSString stringWithFormat:@"%@%@Loading", themeKey,NSStringFromClass([aObj class])];
-    VOThemeImagePathType type = [VOThemeUtils imagePathType:aImage];
-    switch (type) {
-        case VOThemeImagePathMainBundle: {
-            UIImage *image = [UIImage imageNamed:aImage];
-            imageHandler(aObj,image, tag);
-            break;
-        }
-        case VOThemeImagePathLocal:
-        case VOThemeImagePathAbsoluteURL: {
-            [aObj sd_setImageWithURL:[NSURL URLWithString:aImage] loadkey:loadKey loadImageBlock:^(UIImage *image) {
-                imageHandler(aObj,image, tag);
-            }];
-            break;
-        }
-        case VOThemeImagePathRelativeURL:{
-            if (baseImagePath && baseImagePath.length > 0) {
-                NSString *fullPath = [baseImagePath stringByAppendingString:aImage];
-                [aObj sd_setImageWithURL:[NSURL URLWithString:fullPath] loadkey:loadKey loadImageBlock:^(UIImage *image) {
-                    imageHandler(aObj,image, tag);
-                }];
-            }
-            break;
-        }
-        case VOThemeImagePathImage: {
-            imageHandler(aObj,aImage, tag);
-        }
-        default: {
-            break;
-        }
-    }
 }
 
 @end

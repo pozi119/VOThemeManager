@@ -14,13 +14,16 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     NSArray *barItems = self.tabBar.items;
-    if (barItems.count >= 3) {
-        [[VOThemeManager sharedManager] setThemeObject:barItems[0] primaryKey:@"tb1" tag:UIControlStateNormal themeKey:VOThemeImageKey];
-        [[VOThemeManager sharedManager] setThemeObject:barItems[1] primaryKey:@"tb2" tag:UIControlStateNormal themeKey:VOThemeImageKey];
-        [[VOThemeManager sharedManager] setThemeObject:barItems[2] primaryKey:@"tb3" tag:UIControlStateNormal themeKey:VOThemeImageKey];
+    for (NSInteger i = 0; i < barItems.count; i ++) {
+        NSString *key = [NSString stringWithFormat:@"item%@_image",@(i+1)];
+        [VOThemeManager setThemeObject:barItems[i] forKey:key defaultBlock:^id(UITabBarItem *item) {
+            return item.image;
+        } applier:^(UITabBarItem *item, UIImage *image) {
+            item.image = image;
+        }];
     }
     self.tabBar.tintColor = [UIColor redColor];
-    self.tabBar.shadowImage = [UIImage imageNamed:@"tmp_theme_9"];
+//    self.tabBar.shadowImage = [UIImage imageNamed:@"tmp_theme_9"];
 }
 
 @end

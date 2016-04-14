@@ -2,27 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>nav|0|backgroundImage</key>
+	<key>nav_bgImage</key>
 	<string>http://pic2.ooopic.com/10/54/94/06b1OOOPICb9.jpg</string>
-	<key>btn1|0|color</key>
+	<key>btn1_titleColor</key>
 	<string>#5BBD2C</string>
-	<key>btn1|0|backgroundColor</key>
+	<key>btn1_bgColor</key>
 	<string>#8C63A5</string>
-	<key>btn1|1|color</key>
+	<key>btn1_hlColor</key>
 	<string>#DE0029</string>
-	<key>btn1|2|color</key>
+	<key>btn1_selectedColor</key>
 	<string>#DE0029</string>
-	<key>btn1|4|color</key>
+	<key>btn1_disableColor</key>
 	<string>#DE0029</string>
-	<key>lbl1|0|color</key>
+	<key>lb1_textColor</key>
 	<string>#2CAE61</string>
-	<key>view1|0|backgroundColor</key>
+	<key>view1_bgColor</key>
 	<string>#FCD20A</string>
-	<key>tb1|0|image</key>
+	<key>item1_image</key>
 	<string>tmp_theme_5</string>
-	<key>tb2|0|image</key>
+	<key>item2_image</key>
 	<string>tmp_theme_7</string>
-	<key>tb3|0|image</key>
+	<key>item3_image</key>
 	<string>tmp_theme_11</string>
 </dict>
 </plist>

@@ -6,82 +6,52 @@
 [![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 [![Build Status](https://travis-ci.org/pozi119/VOThemeManager.svg?branch=master)](https://travis-ci.org/pozi119/VOThemeManager)
 
+# 更新说明
+* 本次改动较大,移除了预设,改为自行编写代码获取默认值以及设置主题值,增加了灵活度.
+* 存取数据的Key不再是 **主键|tag|主题键**的方式,而是只使用 **主键**
+* 添加/修改主题数据,不再在block中处理,改为用户自行处理成NSDictionary,可参考Demo.
+* Demo中是预先下载图片,并将颜色字符串转为UIColor.这些也可以在某个对象设置主题时再转换
+
 # 安装
-* CocoaPods导入(目前使用SDWebImage加载图片,会自动导入SDWebImage):
+* CocoaPods导入(目前使用YYCache缓存主题数据,会自动导入YYCache):
 ```ruby
 pod 'VOThemeManager'
 ```
 * 手动导入:
   * 将`VOThemeManager`文件夹内所有源码拽入项目
-  * 导入`SDWebImage`
-
+  * 导入`YYCache`
 
 # 数据说明
-   themes 存放所有主题数据,key表示主题名,value为对应主题数据.  
-   主题数据也是NSDictionary类型, key的格式为 **主键|标签|主题键**,value为相应的值  
-   示例如下:
-```ruby
-{
-    test = {
-        "nav|0|image" = "tmp_nav_bg";
-        "sample|0|color" = "#FFF000";
-        "sample|0|image" = "tmp_nav_bg";
-    };
- }
-```
-   主题数据可以用自定义的方式存储,提供了相应的代理方法,但暂未进行调试.
+   主题数据使用YYCache存储,不同主题所存放的文件夹不同.主题值的
 
-   themeAppliers 应用主题数据的方法, themeGetters 获取对象的某个主题属性, themeObjs 当前要应用主题的对象  
-   它们都是 NSMutableDictionary 对象.  
-   themeAppliers和themeGetters的key都是 **类名(单列对象内存地址)|标签|主题键**, value为block对象.  
-   themeObjs的key是 **主键|标签|主题键**, value为某个对象,通常为某种视图对象
-
-   注:  
-   主  键 --> 自定义的键,用于表示某个主题对象.  
-   标  签 --> 比较灵活,可以是UIControlState,比如UIButton的各种状态. 也可以是某个View的tag,用于区分相同类型的不同对象.也可以是一些自定义的状态  
-   主题键 --> 预定义了四种,`color`, `backgroundColor`, `image`, `backgroundImage` (对应`VOThemeColorKey`, `VOThemeBackgroundColorKey`, `VOThemeImageKey`, `VOThemeBackgroundImageKey`).当然也可以自定义主题键.  
-   真实键 --> 由 **主键(类名 或 单列对象内存地址))|标签|主题键** 组合起来构成 
+   themeAppliers 应用主题数据的方法, themeObjs当前要应用主题的对象,它们都是 NSMapTable对象, 在被释放后会自动从NSMapTable中删除
+   themeAppliers的key是 **主键** , value为block对象.  
+   themeObjs的key是 **主键** , value为某个对象,通常为某种视图对象
 
 # 使用
-1.唤醒APP时,将主题数据转换为本管理器支持的格式. 例如:
+1.新增/修改主题
 ```objc
-[[VOThemeManager sharedManager] setTheme:array withName:key themeConverter:^NSDictionary *(NSArray *themeArray) {
-    __block NSMutableDictionary *itemDic = @{}.mutableCopy;
-    [themeArray enumerateObjectsUsingBlock:^(WXSkinItem *skinItem, NSUInteger idx, BOOL *stop) {
-        if (skinItem.skinCode.length > 0) {
-            if (skinItem.skinFontStyle.length > 0) {
-                NSString *realKey = nil;
-                BOOL flag = [VOThemeUtils convertPrimaryKey:skinItem.skinCode tag:0 themeKey:VOThemeColorKey toRealKey:&realKey];
-                if (flag) {
-                    itemDic[realKey] = skinItem.skinFontStyle;
-                }
-            }
-            if (skinItem.skinPic.length > 0) {
-                NSString *realKey = nil;
-                BOOL flag = [VOThemeUtils convertPrimaryKey:skinItem.skinCode tag:0 themeKey:VOThemeImageKey toRealKey:&realKey];
-                if (flag) {
-                    itemDic[realKey] = skinItem.skinPic;
-                }
-            }
-        }
-    }];
-    return itemDic;
-}];
+        [VOThemeManager setData:processedDic forTheme:@"test"];
 ```
-通常在` - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`中调用
+注:新增主题之后不会自动使用新增的主题.
 
 2.加载完主题数据后,应用指定的主题. 例如:
 ```objc
-[[VOThemeManager sharedManager] applyThemeWithName:@"test"];
+      VOThemeManager.currentTheme = @"test";  /* 设置为test主题 */
+      VOThemeManager.currentTheme = nil;      /* 不使用主题 */
 ```
-通常在`- (void)applicationDidBecomeActive:(UIApplication *)application`中调用
 
 3.添加要使用的主题对象. 例如:
 ```objc
-[[VOThemeManager sharedManager] setThemeObject:self.testButton primaryKey:@"btn1" tag:UIControlStateNormal themeKey:VOThemeColorKey];
+    [VOThemeManager setThemeObject:self.testButton  /* 主题对象 */
+    forKey:@"btn1_bgColor"  /* 主键,用于关联主题值,主题对象,应用方式,默认值 */
+    defaultBlock:^id(UIButton *button) { /* 获取默认值,不使用主题时将重设为此值 */
+        return button.backgroundColor;   
+    } 
+    applier:^(UIButton *button, UIColor *color) { /* 应用主题的方式 */
+        button.backgroundColor = color;  
+    }];
 ```
-4.设置应用主题的方式.  
-在 VOThemeManager+Preset.m 中已经有一部分预置方案.若需要自定义,请参考此文件中的方法.
 
 
 

@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E00B0B81CBF70F8002C5F50 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E00B0B71CBF70F8002C5F50 /* SecondViewController.m */; };
 		3E17273B1BFF5B78005708A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E17273A1BFF5B78005708A6 /* main.m */; };
 		3E17273E1BFF5B78005708A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E17273D1BFF5B78005708A6 /* AppDelegate.m */; };
 		3E1727441BFF5B78005708A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1727421BFF5B78005708A6 /* Main.storyboard */; };
 		3E1727461BFF5B78005708A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1727451BFF5B78005708A6 /* Assets.xcassets */; };
 		3E1727491BFF5B78005708A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1727471BFF5B78005708A6 /* LaunchScreen.storyboard */; };
 		3E7003E71C11C42200D9DEF6 /* VOThemeSample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E7003E61C11C42200D9DEF6 /* VOThemeSample.plist */; };
-		3EFD32CA1C073D02005E40EF /* NSObject+VOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32BD1C073D02005E40EF /* NSObject+VOTheme.m */; };
-		3EFD32CB1C073D02005E40EF /* NSObject+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32BF1C073D02005E40EF /* NSObject+WebCacheOperation.m */; };
 		3EFD32CC1C073D02005E40EF /* UIColor+VOHEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32C11C073D02005E40EF /* UIColor+VOHEX.m */; };
 		3EFD32CD1C073D02005E40EF /* VOThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32C31C073D02005E40EF /* VOThemeManager.m */; };
 		3EFD32D01C073D02005E40EF /* VOThemeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32C81C073D02005E40EF /* VOThemeUtils.m */; };
-		3EFD32D41C075FF0005E40EF /* VOThemeManager+Preset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32D31C075FF0005E40EF /* VOThemeManager+Preset.m */; };
 		3EFD32D71C077F30005E40EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32D61C077F30005E40EF /* ViewController.m */; };
 		3EFD32DA1C081A92005E40EF /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD32D91C081A92005E40EF /* TabBarController.m */; };
 		823601DA27CAF81F70EA7808 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4971FF6B1CD95E22A9430721 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E00B0B61CBF70F8002C5F50 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3E00B0B71CBF70F8002C5F50 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		3E1727361BFF5B78005708A6 /* VOThemeManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOThemeManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E17273A1BFF5B78005708A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E17273C1BFF5B78005708A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,17 +34,12 @@
 		3E1727481BFF5B78005708A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E17274A1BFF5B78005708A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E7003E61C11C42200D9DEF6 /* VOThemeSample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VOThemeSample.plist; sourceTree = "<group>"; };
-		3EFD32BC1C073D02005E40EF /* NSObject+VOTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VOTheme.h"; sourceTree = "<group>"; };
-		3EFD32BD1C073D02005E40EF /* NSObject+VOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VOTheme.m"; sourceTree = "<group>"; };
-		3EFD32BE1C073D02005E40EF /* NSObject+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WebCacheOperation.h"; sourceTree = "<group>"; };
-		3EFD32BF1C073D02005E40EF /* NSObject+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WebCacheOperation.m"; sourceTree = "<group>"; };
 		3EFD32C01C073D02005E40EF /* UIColor+VOHEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+VOHEX.h"; sourceTree = "<group>"; };
 		3EFD32C11C073D02005E40EF /* UIColor+VOHEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+VOHEX.m"; sourceTree = "<group>"; };
 		3EFD32C21C073D02005E40EF /* VOThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOThemeManager.h; sourceTree = "<group>"; };
 		3EFD32C31C073D02005E40EF /* VOThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOThemeManager.m; sourceTree = "<group>"; };
 		3EFD32C71C073D02005E40EF /* VOThemeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOThemeUtils.h; sourceTree = "<group>"; };
 		3EFD32C81C073D02005E40EF /* VOThemeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOThemeUtils.m; sourceTree = "<group>"; };
-		3EFD32D31C075FF0005E40EF /* VOThemeManager+Preset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VOThemeManager+Preset.m"; sourceTree = "<group>"; };
 		3EFD32D51C077F30005E40EF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3EFD32D61C077F30005E40EF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3EFD32D81C081A92005E40EF /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
@@ -93,6 +88,8 @@
 				3E17273D1BFF5B78005708A6 /* AppDelegate.m */,
 				3EFD32D51C077F30005E40EF /* ViewController.h */,
 				3EFD32D61C077F30005E40EF /* ViewController.m */,
+				3E00B0B61CBF70F8002C5F50 /* SecondViewController.h */,
+				3E00B0B71CBF70F8002C5F50 /* SecondViewController.m */,
 				3EFD32D81C081A92005E40EF /* TabBarController.h */,
 				3EFD32D91C081A92005E40EF /* TabBarController.m */,
 				3E1727421BFF5B78005708A6 /* Main.storyboard */,
@@ -115,15 +112,10 @@
 		3EFD32BB1C073D02005E40EF /* VOThemeManager */ = {
 			isa = PBXGroup;
 			children = (
-				3EFD32BC1C073D02005E40EF /* NSObject+VOTheme.h */,
-				3EFD32BD1C073D02005E40EF /* NSObject+VOTheme.m */,
-				3EFD32BE1C073D02005E40EF /* NSObject+WebCacheOperation.h */,
-				3EFD32BF1C073D02005E40EF /* NSObject+WebCacheOperation.m */,
 				3EFD32C01C073D02005E40EF /* UIColor+VOHEX.h */,
 				3EFD32C11C073D02005E40EF /* UIColor+VOHEX.m */,
 				3EFD32C21C073D02005E40EF /* VOThemeManager.h */,
 				3EFD32C31C073D02005E40EF /* VOThemeManager.m */,
-				3EFD32D31C075FF0005E40EF /* VOThemeManager+Preset.m */,
 				3EFD32C71C073D02005E40EF /* VOThemeUtils.h */,
 				3EFD32C81C073D02005E40EF /* VOThemeUtils.m */,
 			);
@@ -270,15 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EFD32D71C077F30005E40EF /* ViewController.m in Sources */,
-				3EFD32CB1C073D02005E40EF /* NSObject+WebCacheOperation.m in Sources */,
 				3EFD32CC1C073D02005E40EF /* UIColor+VOHEX.m in Sources */,
 				3EFD32CD1C073D02005E40EF /* VOThemeManager.m in Sources */,
-				3EFD32CA1C073D02005E40EF /* NSObject+VOTheme.m in Sources */,
 				3E17273E1BFF5B78005708A6 /* AppDelegate.m in Sources */,
+				3E00B0B81CBF70F8002C5F50 /* SecondViewController.m in Sources */,
 				3EFD32D01C073D02005E40EF /* VOThemeUtils.m in Sources */,
 				3EFD32DA1C081A92005E40EF /* TabBarController.m in Sources */,
 				3E17273B1BFF5B78005708A6 /* main.m in Sources */,
-				3EFD32D41C075FF0005E40EF /* VOThemeManager+Preset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

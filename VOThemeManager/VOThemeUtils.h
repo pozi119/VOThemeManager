@@ -1,9 +1,9 @@
 //
 //  VOThemeUtils.h
-//  netCafe
+//  Valo
 //
 //  Created by Valo on 15/11/24.
-//  Copyright © 2015年 Sicent. All rights reserved.
+//  Copyright © 2015年 Valo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -94,24 +94,6 @@ typedef void(^VOImageHandler)(id aObj, UIImage *image, NSInteger tag);
  *  @return 所有属于指定规则的subview
  */
 + (NSArray *)viewsInView:(UIView *)inview matchingPredicate:(NSPredicate *)predicate;
-
-
-+ (BOOL)convertRealKey:(NSString *)realKey
-          toPrimaryKey:(NSString **)primaryKey
-                   tag:(NSInteger *)tag
-              themeKey:(NSString **)themeKey;
-
-+ (BOOL)convertPrimaryKey:(id)primaryKey
-                      tag:(NSInteger)tag
-                 themeKey:(NSString *)themeKey
-                toRealKey:(NSString **)realKey;
-
-+ (void)configureImageForObject:(NSObject *)aObj
-                          image:(id)aImage
-                  baseImagePath:(NSString *)baseImagePath
-                       themeKey:(NSString *)themeKey
-                            tag:(NSInteger)tag
-                   imageHandler:(VOImageHandler)imageHandler;
 
 
 @end
