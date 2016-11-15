@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/pozi119/VOThemeManager.git", :tag => s.version.to_s }
   s.source_files  = "VOThemeManager", "VOThemeManager/*.{h,m}"
-  s.dependency "YYCache", "~> 1.0.3"
+  s.dependency "YYCache"
 end

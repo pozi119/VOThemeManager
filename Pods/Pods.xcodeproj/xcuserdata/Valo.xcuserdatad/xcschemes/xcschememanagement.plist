@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-VOThemeManagerDemo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>23C1F12B4943BF8EA3688D728CD25677</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1CB4487985125B7ADABADC42DA11D02</key>
+		<key>8E755ED67D8D36DE478DBCFE5A723A4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA90F8280D3FC5385765EEFBA9A649EC</key>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
