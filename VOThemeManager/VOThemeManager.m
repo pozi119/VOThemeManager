@@ -108,8 +108,8 @@ NSString * const VOThemeDomain                 = @"com.valo.themeManager";
         NSString *path = [_cacheFolder stringByAppendingPathComponent:VODefaultTheme];
         _defaultCache = [YYCache cacheWithPath:path];
         self.currentTheme = [[NSUserDefaults standardUserDefaults] stringForKey:VOCurrentThemeKey];
-        _themeObjs = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsStrongMemory valueOptions:NSPointerFunctionsWeakMemory];
-        _themeAppliers = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsStrongMemory valueOptions:NSPointerFunctionsWeakMemory];
+        _themeObjs = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsWeakMemory valueOptions:NSPointerFunctionsWeakMemory];
+        _themeAppliers = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsWeakMemory valueOptions:NSPointerFunctionsWeakMemory];
     }
     return self;
 }

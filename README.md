@@ -7,10 +7,7 @@
 [![Build Status](https://travis-ci.org/pozi119/VOThemeManager.svg?branch=master)](https://travis-ci.org/pozi119/VOThemeManager)
 
 # 更新说明
-* 本次改动较大,移除了预设,改为自行编写代码获取默认值以及设置主题值,增加了灵活度.
-* 存取数据的Key不再是 **主键|tag|主题键**的方式,而是只使用 **主键**
-* 添加/修改主题数据,不再在block中处理,改为用户自行处理成NSDictionary,可参考Demo.
-* Demo中是预先下载图片,并将颜色字符串转为UIColor.这些也可以在某个对象设置主题时再转换
+* 一些细节调整
 
 # 安装
 * CocoaPods导入(目前使用YYCache缓存主题数据,会自动导入YYCache):

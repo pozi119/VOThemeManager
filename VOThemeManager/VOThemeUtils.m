@@ -61,14 +61,16 @@
 }
 
 + (UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)size fixSreenScale:(BOOL)flag{
-    CGSize newSize = size;
+    CGSize iSize = image.size;
+    CGFloat x = MIN(size.width/iSize.width, size.height/iSize.height);
+    CGSize newSize = CGSizeMake(iSize.width * x, iSize.height * x);
     CGFloat scale = [UIScreen mainScreen].scale;
     if (flag) {
-        newSize = CGSizeMake(size.width * scale, size.height * scale);
+        newSize = CGSizeMake(newSize.width * scale, newSize.height * scale);
     }
     UIGraphicsBeginImageContext(newSize);
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if (flag) {
         scaledImage = [UIImage imageWithCGImage:scaledImage.CGImage scale:scale orientation:UIImageOrientationUp];
