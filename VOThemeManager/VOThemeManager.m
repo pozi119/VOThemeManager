@@ -22,7 +22,7 @@ NSString * const VOThemeDomain                 = @"com.valo.themeManager";
 @property (nonatomic, strong, nonnull) YYCache  *defaultCache;    /**< 默认主题数据 */
 @property (nonatomic, copy  ) NSString *cacheFolder;              /**< 存放主题数据的目录 */
 @property (nonatomic, strong) NSMapTable *themeObjs;     /**< 要应用主题的对象 */
-@property (nonatomic, strong) NSMapTable *themeAppliers; /**< 应用主题的方式 */
+@property (nonatomic, strong) NSMutableDictionary *themeAppliers; /**< 应用主题的方式 */
 @end
 
 @implementation VOThemeManager
@@ -109,7 +109,7 @@ NSString * const VOThemeDomain                 = @"com.valo.themeManager";
         _defaultCache = [YYCache cacheWithPath:path];
         self.currentTheme = [[NSUserDefaults standardUserDefaults] stringForKey:VOCurrentThemeKey];
         _themeObjs = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsWeakMemory valueOptions:NSPointerFunctionsWeakMemory];
-        _themeAppliers = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsWeakMemory valueOptions:NSPointerFunctionsWeakMemory];
+        _themeAppliers = @{}.mutableCopy;
     }
     return self;
 }
