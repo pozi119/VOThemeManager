@@ -17,13 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [VOThemeManager setThemeObject:self.label forKey:@"lb1_textColor" defaultBlock:^id(UILabel *label) {
-        return label.textColor;
-    } applier:^(UILabel *label, UIColor *color) {
+    VOThemeManager *manager = [VOThemeManager shared];
+    [manager setData:self.label.textColor forKey:@"lb1_textColor" theme:VODefaultTheme];
+    [manager registerThemeObject:self.label key:@"lb1_textColor" applier:^(UILabel *label, UIColor *color) {
         label.textColor = color;
     }];
-    VOThemeManager *manager = [VOThemeManager sharedManager];
-    NSLog(@"%@", manager);
 }
 
 @end

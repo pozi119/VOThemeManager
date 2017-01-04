@@ -19,19 +19,19 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     /* 设置要应用的对象 */
+    VOThemeManager *manager = [VOThemeManager shared];
     NSArray *keys = @[@"btn1_titleColor",@"btn1_hlColor",@"btn1_selectedColor",@"btn1_disableColor"];
     NSArray *state = @[@(UIControlStateNormal), @(UIControlStateHighlighted), @(UIControlStateSelected),@(UIControlStateDisabled)];
     for (NSInteger i = 0; i < keys.count; i ++) {
-        [VOThemeManager setThemeObject:self.testButton forKey:keys[i] defaultBlock:^id(UIButton *button) {
-            return [button titleColorForState:[state[i] integerValue]];
-        } applier:^(UIButton *button, UIColor *color) {
-            [button setTitleColor:color forState:[state[i] integerValue]];
+        UIColor *color = [self.testButton titleColorForState:[state[i] integerValue]];
+        [manager setData:color forKey:keys[i] theme:VODefaultTheme];
+        [manager registerThemeObject:self.testButton key:keys[i] applier:^(UIButton *btn, UIColor *color) {
+            [btn setTitleColor:color forState:[state[i] integerValue]];
         }];
     }
-    [VOThemeManager setThemeObject:self.testButton forKey:@"btn1_bgColor" defaultBlock:^id(UIButton *button) {
-        return button.backgroundColor;
-    } applier:^(UIButton *button, UIColor *color) {
-        button.backgroundColor = color;
+    [manager setData:self.testButton.backgroundColor forKey:@"btn1_bgColor" theme:VODefaultTheme];
+    [manager registerThemeObject:self.testButton key:@"btn1_bgColor" applier:^(UIButton *btn, UIColor *color) {
+        btn.backgroundColor = color;
     }];
 }
 

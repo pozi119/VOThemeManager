@@ -14,16 +14,16 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     NSArray *barItems = self.tabBar.items;
+    VOThemeManager *manager = [VOThemeManager shared];
     for (NSInteger i = 0; i < barItems.count; i ++) {
+        UITabBarItem *item = barItems[i];
         NSString *key = [NSString stringWithFormat:@"item%@_image",@(i+1)];
-        [VOThemeManager setThemeObject:barItems[i] forKey:key defaultBlock:^id(UITabBarItem *item) {
-            return item.image;
-        } applier:^(UITabBarItem *item, UIImage *image) {
+        [manager setData:item.image forKey:key theme:VODefaultTheme];
+        [manager registerThemeObject:item key:key applier:^(UITabBarItem *item, UIImage *image) {
             item.image = image;
         }];
     }
     self.tabBar.tintColor = [UIColor redColor];
-//    self.tabBar.shadowImage = [UIImage imageNamed:@"tmp_theme_9"];
 }
 
 @end

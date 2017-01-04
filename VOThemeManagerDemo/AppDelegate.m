@@ -49,10 +49,10 @@
         }
     }];
     dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
-        [VOThemeManager setData:processedDic forTheme:@"test"];
-        VOThemeManager.currentTheme = @"test";
+        [[VOThemeManager shared] setData:processedDic forTheme:@"test"];
+        [VOThemeManager shared].currentTheme = @"test";
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            VOThemeManager.currentTheme = nil;
+            [VOThemeManager shared].currentTheme = nil;
         });
     });
     
